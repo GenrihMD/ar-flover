@@ -1,18 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <bad-flower :leafs="leafs"></bad-flower>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BadFlower from './components/BadFlover';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+      BadFlower
+  },
+    data: function() {
+        return {
+            leafs : [
+                { competence_id: 1,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 50, percent_min: 50, passed: true },
+                { competence_id: 2,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 3,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 4,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 5,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 6,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 7,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 8,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 9,  competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true },
+                { competence_id: 10, competence_name: "Бюджетирование и финансовое планирование", score: 2, total: 10, total_correct: "2", percent_correct: 20, percent_min: 50, passed: true},
+            ]}
+    }
 }
 </script>
 
