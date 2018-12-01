@@ -5,7 +5,7 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M292.567 46.5211V293.768C292.567 303.099 297.006 304.54 302.491 296.995L447.677 96.9593C453.156 89.4136 451.463 78.8608 443.57 73.9054C423.353 61.2071 401.723 51.1105 379.199 43.7843C356.68 36.4582 333.25 31.9026 309.432 30.2808C300.134 29.6502 292.567 37.1903 292.567 46.5211Z" fill="white"/>
         </mask>
         <g mask="url(#mask0)">
-            <circle cx="290.5" cy="313" :r="leafsOptions[0].scoreCircleRadius" fill="#F39A9A" />
+            <circle cx="290.5" cy="313" :r="leafsOptions[0].scoreCircleRadius" :fill="leafsOptions[0].scoreCircleColor" />
             <circle cx="290.5" cy="313" :r="230" fill="none" stroke="black" stroke-dasharray="9"/>
         </g>
 
@@ -140,12 +140,13 @@
 <script>
     export default {
         name: "BadFlover",
-        props: [leafs],
+        props: ['leafs'],
         computed: {
             leafsOptions : function() {
                  return this.leafs.map(leaf => {
                      return {
-                         scoreCircleRadius : leaf.percent_correct * 2.95
+                         scoreCircleRadius : leaf.percent_correct * 2.95,
+                         scoreCircleColor: leaf.passed ? '#AADC8B' : '#F39A9A',
                      }
                  });
             }
