@@ -1,11 +1,10 @@
 <template>
     <g>
-        <g :filter="hover ? 'url(#shadow)' : ''" @mouseover="setShadow" @mouseout="unsetShadow" >
+        <g :filter="hover ? 'url(#shadow)' : ''" >
             <path fill-rule="evenodd" clip-rule="evenodd" :d="options[number].path" :fill="hover ? '#FFFFFF' : '#EFEFEF'" />
         </g>
         <clipPath :id="'clip_path' + number" mask-type="alpha" maskUnits="userSpaceOnUse" :x="options[number].mask.x" :y="options[number].mask.y" :width="options[number].mask.w" :height="options[number].mask.h">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                  :d="options[number].path" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" :d="options[number].path" fill="white"/>
         </clipPath>
         <defs>
             <filter id="shadow" width="120%" height="120%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -118,14 +117,6 @@
         props: {
             number: Number,
             hover: Boolean
-        },
-        methods: {
-            'setShadow' : function () {
-                this.hover = true;
-            },
-            'unsetShadow' : function () {
-                this.hover = false
-            }
         }
     }
 </script>

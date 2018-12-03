@@ -33,11 +33,11 @@
         methods: {
             mouseOver: function () {
                 this.hover = true;
-                this.$emit('mouse-over-leaf', this.option.id);
+                this.$emit('mouse-over-leaf', this.options.id);
             },
             mouseOut: function () {
                 this.hover = false;
-                this.$emit('mouse-out-leaf', this.option.id);
+                this.$emit('mouse-out-leaf', this.options.id);
             }
         }
     }

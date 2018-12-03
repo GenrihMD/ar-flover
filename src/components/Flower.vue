@@ -1,8 +1,6 @@
 <template>
     <svg width="580" height="609" viewBox="0 0 580 609" fill="none" xmlns="http://www.w3.org/2000/svg">
-
         <flower-leaf v-for="leafsOption in leafsOptions" :key="leafsOption.id" :options="leafsOption"></flower-leaf>
-
         <g>
             <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M267 54C271.418 54 275 50.4183 275 46C275 41.5817 271.418 38 267 38C262.582 38 259 41.5817 259 46C259 50.4183 262.582 54 267 54Z"
@@ -103,20 +101,6 @@
                   stroke-width="0.7"
                   class="nums"/>
         </g>
-        <defs>
-            <filter id="filter0_d" x="98.6406" y="0.232056" width="218.324" height="331.599"
-                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-                <feOffset/>
-                <feGaussianBlur stdDeviation="15"/>
-                <feColorMatrix type="matrix"
-                               values="0 0 0 0 0.631271 0 0 0 0 0.631271 0 0 0 0 0.631271 0 0 0 0.589278 0"/>
-                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-            </filter>
-        </defs>
-
     </svg>
 </template>
 
