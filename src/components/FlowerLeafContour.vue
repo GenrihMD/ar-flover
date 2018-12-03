@@ -1,12 +1,12 @@
 <template>
     <g>
-        <g :filter="shadow ? 'url(#shadow)' : '' " cursor="pointer" pointer-events="all" @mouseover="setShadow" @mouseout="unsetShadow">
-            <path fill-rule="evenodd" clip-rule="evenodd" :d="options[number].path" fill="#EFEFEF" />
+        <g :filter="hover ? 'url(#shadow)' : ''" @mouseover="setShadow" @mouseout="unsetShadow" >
+            <path fill-rule="evenodd" clip-rule="evenodd" :d="options[number].path" :fill="hover ? '#FFFFFF' : '#EFEFEF'" />
         </g>
-        <mask :id="'mask' + number" mask-type="alpha" maskUnits="userSpaceOnUse" :x="options[number].mask.x" :y="options[number].mask.y" :width="options[number].mask.w" :height="options[number].mask.h">
+        <clipPath :id="'clip_path' + number" mask-type="alpha" maskUnits="userSpaceOnUse" :x="options[number].mask.x" :y="options[number].mask.y" :width="options[number].mask.w" :height="options[number].mask.h">
             <path fill-rule="evenodd" clip-rule="evenodd"
                   :d="options[number].path" fill="white"/>
-        </mask>
+        </clipPath>
         <defs>
             <filter id="shadow" width="120%" height="120%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                 <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
@@ -117,22 +117,21 @@
         },
         props: {
             number: Number,
-            shadow: Boolean
+            hover: Boolean
         },
         methods: {
             'setShadow' : function () {
-                this.shadow = true;
+                this.hover = true;
             },
             'unsetShadow' : function () {
-                this.shadow = false
+                this.hover = false
             }
         }
     }
 </script>
 
 <style scoped>
-    path:hover {
-        fill: #ffffff;
+    path {
         transition: all 0.4s;
     }
 </style>
